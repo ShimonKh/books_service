@@ -1,0 +1,48 @@
+
+.book-card {
+  width: 220px;
+  height: 130px;
+  -webkit-box-shadow: 4px 7px 15px -2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 4px 7px 15px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: 4px 7px 15px -2px rgba(0, 0, 0, 0.75);
+  margin: 15px;
+  padding-top: 5px;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid olive
+}
+
+@media screen and (max-width: 767px) and (min-width: 520px) {
+  .book-card {
+    width: 280px;
+  }
+}
+
+.icon-edit {
+  color: #00f;
+  cursor: pointer;
+}
+
+.icon-delete {
+  color: #f00;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.form-help-text {
+  color: red;
+}
+
+.book-card-date {
+  text-align: center;
+  position: absolute;
+  top: 100px;
+  width: 100%;
+}
+
+.book-card .row {
+  margin-right: 0;
+  margin-left: 0;
+}

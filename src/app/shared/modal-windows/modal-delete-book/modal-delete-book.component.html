@@ -1,0 +1,18 @@
+<i
+  class="fa fa-remove icon-delete"
+  (click)="openModal(template)"
+></i>
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left ">Delete book?</h4>
+    <button type="button" class="close pull-right"
+            aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <button type="button" class="btn btn-default" (click)="modalRef.hide()">Cancel</button>
+    <button type="button" class="btn btn-danger pull-right" (click)="deleteBook()">Delete</button>
+  </div>
+</ng-template>

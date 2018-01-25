@@ -1,0 +1,60 @@
+<i
+  class="fa fa-edit icon-edit"
+  (click)="openModal(template)"
+></i>
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Edit book</h4>
+    <button type="button" class="close pull-right"
+            aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group"
+           [ngClass]="{'has-error': form.get('author').invalid}">
+        <label for="author">Author</label>
+        <input
+          type="text"
+          class="form-control underlined"
+          id="author"
+          placeholder="Author"
+          formControlName="author"
+        >
+        <span class="form-help-text" *ngIf="form.get('author').invalid ">
+       <span *ngIf="form.get('author')['errors']['required']">Field is required. </span>
+    </span>
+      </div>
+      <div class="form-group"
+           [ngClass]="{'has-error': form.get('title').invalid}">
+        <label for="title">Title</label>
+        <input
+          type="text"
+          class="form-control underlined"
+          id="title"
+          placeholder="Title"
+          formControlName="title"
+        >
+      </div>
+      <div class="form-group"
+           [ngClass]="{'has-error': form.get('date').invalid}">
+        <label for="date">Date</label>
+        <input
+          type="date"
+          class="form-control underlined"
+          id="date"
+          placeholder="Date"
+          formControlName="date"
+        >
+      </div>
+      <div class="form-group">
+        <button type="button" class="btn btn-secondary" (click)="modalRef.hide()">Cancel</button>
+        <button [disabled]="form.invalid" type="submit" class="btn btn-primary pull-right">Save</button>
+      </div>
+    </form>
+  </div>
+</ng-template>
